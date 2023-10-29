@@ -43,7 +43,7 @@ export default class CrashdumpParser extends Component {
     if (response.status === 400) {
       return this.setState({
         loading: false,
-        parseError: 'Sorry, an error occurred decoding your crashdump.',
+        parseError: '抱歉，解码您的故障记录时发生错误。',
         parseErrorLink: '/support#decode-crashdump-error'
       });
     }
@@ -71,25 +71,25 @@ export default class CrashdumpParser extends Component {
     let CrashdumpPreview = null;
     if (parsedCrashdumpStr) {
       CrashdumpPreview = dynamic(import('../components/CrashdumpPreview'), {
-        loading: () => <p>Loading preview<span className="dots" /></p>,
+        loading: () => <p>加载预览<span className="dots" /></p>,
       });
     }
     return (
       <>
         <Head>
-          <meta name="description" content="Decode and preview crashdumps" />
+          <meta name="description" content="解码并预览故障记录" />
         </Head>
-        <Layout title="Crashdump Parser" showNav={true}>
+        <Layout title="故障解析器" showNav={true}>
           {parseError ?
-            <Alert variant="danger">{parseError} <Link href={parseErrorLink}>More info.</Link></Alert> : null}
+            <Alert variant="danger">{parseError} <Link href={parseErrorLink}>更多信息</Link></Alert> : null}
           <Form onSubmit={this.handleSubmit}>
             <Form.Group>
-              <Form.Label>Crashdump</Form.Label>
+              <Form.Label>故障记录</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={6}
                 onChange={this.handleChange}
-                placeholder="Paste crashdump here"
+                placeholder="在此粘贴故障记录"
                 className="mb-3"
               />
             </Form.Group>
@@ -101,21 +101,21 @@ export default class CrashdumpParser extends Component {
               {loading ? (
                 <>
                   <span className="spinner-border spinner-border-sm mr-1" />{' '}
-                  Decoding
+                  解码中
                   <span className="dots" />
                 </>
               ) : (
-                'Decode'
+                '解码'
               )}
             </Button>
             <small className="text-muted">
               <br />
-              Your crashdump will be sent to the server for decoding.
+              您的故障转储将被发送到服务器进行解码。
             </small>
           </Form>
           {parsedCrashdumpStr ? (
             <Tabs defaultActiveKey="preview" className="mb-3 mt-3">
-              <Tab eventKey="preview" title="Preview">
+              <Tab eventKey="preview" title="预览">
                 <CrashdumpPreview crashdump={parsedCrashdumpObj} />
               </Tab>
               <Tab eventKey="raw" title="Raw JSON">
@@ -129,7 +129,7 @@ export default class CrashdumpParser extends Component {
                   />
                 </Form.Group>
                 <Button variant="primary" onClick={this.saveCrashdump}>
-                  Download
+                  下载
                 </Button>
               </Tab>
             </Tabs>
