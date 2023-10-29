@@ -5,12 +5,12 @@ export default class Home extends Component {
   render = () => (
     <>
       <Head>
-        <meta name="description" content="Convert PocketMine-MP plugins online" />
+        <meta name="description" content="在线转换PocketMine-MP插件" />
       </Head>
       <Layout title={null} showNav={true}>
-        <h1>Welcome to PocketMine Tools!</h1>
+        <h1>欢迎来到 PocketMine 工具箱！</h1>
         <p>
-          Convert PocketMine-MP plugins online
+          在线转换 PocketMine-MP 插件
         </p>
       </Layout>
     </>
