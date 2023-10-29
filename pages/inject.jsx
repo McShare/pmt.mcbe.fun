@@ -39,7 +39,7 @@ export default class Inject extends Component {
         if (!originalPluginYml) {
           return this.setState({
             error:
-              'An error occurred while injecting your plugin. Ensure that the plugin is in the root directory of the zip.',
+              '注入插件时发生错误。确保插件位于 zip 的根目录中。',
             errorLink: '/support#inject-directory-error'
           });
         }
@@ -62,7 +62,7 @@ export default class Inject extends Component {
         );
       } catch {
         this.setState({
-          error: 'An error occurred while injecting your plugin.',
+          error: '注入插件时发生错误。',
           errorLink: '/support#inject-error'
         });
       } finally {
@@ -89,12 +89,12 @@ export default class Inject extends Component {
     return (
       <>
         <Head>
-          <meta name="description" content="Inject new API versions" />
+          <meta name="description" content="注入新版 API" />
         </Head>
-        <Layout title="API Injector" showNav={true}>
-          {error ? <Alert variant="danger">{error} <Link href={errorLink}>More info.</Link></Alert> : null}
+        <Layout title="API 注入器" showNav={true}>
+          {error ? <Alert variant="danger">{error} <Link href={errorLink}>更多信息</Link></Alert> : null}
           <Form>
-            <Form.Label>Plugin (<code>.phar</code> file)</Form.Label>
+            <Form.Label>插件 (<code>.phar</code> 文件)</Form.Label>
             <InputGroup className="mb-3">
               <Form.Control
                 type="file"
@@ -103,7 +103,7 @@ export default class Inject extends Component {
               />
             </InputGroup>
             <Form.Group className="mb-3">
-              <Form.Label>API version</Form.Label>
+              <Form.Label>API 版本</Form.Label>
               <Form.Control
                 type="text"
                 value={apiVersion}
@@ -121,7 +121,7 @@ export default class Inject extends Component {
               }
               disabled={files.length < 1 || apiVersion.length < 1}
             >
-              Inject
+              注入
             </Button>
           </Form>
           <Modal
@@ -130,25 +130,22 @@ export default class Inject extends Component {
             size="lg"
           >
             <Modal.Header closeButton>
-              <Modal.Title className="text-danger">This is dangerous</Modal.Title>
+              <Modal.Title className="text-danger">这很危险</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <ol>
                 <li>
-                  This tool only forces the plugin to say that it supports API
-                  version <code>{apiVersion}</code>. It will not fix the actual
-                  incompatibility issues.
+                  这个工具仅强行修改插件使其支持<code>{apiVersion}</code>版本的API。但它无法解决实际的不兼容问题。
                 </li>
                 <li>
-                  If errors happen after loading the downloaded plugin, uninstall
-                  it immediately and contact the plugin developer for support.
+                  如果加载下载的插件后出现错误，请立即卸载并联系插件开发人员寻求支持。
                 </li>
                 <li>
-                  Click{' '}
+                  如果你已确定知悉上述事项，请点击{' '}
                   <em onClick={() => this.setState({ warningThreeWords: true })}>
-                    these three words
+                    【此处】
                   </em>{' '}
-                  if you have read the above.
+                  进行确认
                 </li>
               </ol>
             </Modal.Body>
@@ -161,11 +158,11 @@ export default class Inject extends Component {
                 {loading ? (
                   <>
                     <span className="spinner-border spinner-border-sm mr-1" />{' '}
-                    Injecting
+                    注入中
                     <span className="dots" />
                   </>
                 ) : (
-                  'Inject'
+                  '注入'
                 )}
               </Button>
             </Modal.Footer>
