@@ -50,7 +50,7 @@ export default class Extract extends Component<{}, ExtractState> {
           );
         } catch {
           this.setState({
-            error: 'An error occurred while converting your plugin.',
+            error: '转换您的插件时发生错误。',
             errorLink: '/support#convert-error'
           });
         } finally {
@@ -61,7 +61,7 @@ export default class Extract extends Component<{}, ExtractState> {
       };
       reader.onerror = () => {
         this.setState({
-          error: 'An error occurred while converting your plugin.',
+          error: '转换您的插件时发生错误。',
           errorLink: '/support#convert-error',
           loading: false,
         });
@@ -74,12 +74,12 @@ export default class Extract extends Component<{}, ExtractState> {
     return (
       <>
         <Head>
-          <meta name="description" content="Convert .phar to .zip" />
+          <meta name="description" content=将 .phar 转换为 .zip" />
         </Head>
         <Layout title="Extract .phar" showNav={true}>
-          {error ? <Alert variant="danger">{error} <Link href={errorLink!}>More info.</Link></Alert> : null}
+          {error ? <Alert variant="danger">{error} <Link href={errorLink!}>更多信息</Link></Alert> : null}
           <Form onSubmit={this.handleSubmit}>
-            <Form.Label>Plugin (<code>.phar</code> file)</Form.Label>
+            <Form.Label>插件（<code>.phar</code> 文件）</Form.Label>
             <InputGroup className="mb-3">
               <Form.Control
                 type="file"
@@ -91,11 +91,11 @@ export default class Extract extends Component<{}, ExtractState> {
               {loading ? (
                 <>
                   <span className="spinner-border spinner-border-sm mr-1" />{' '}
-                  Converting
+                  转换中
                   <span className="dots" />
                 </>
               ) : (
-                'Extract'
+                '解压'
               )}
             </Button>
           </Form>
