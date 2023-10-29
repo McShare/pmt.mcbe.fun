@@ -84,7 +84,7 @@ export default class Create extends Component {
         <Layout title="Create .phar" showNav={true}>
           {error ? <Alert variant="danger">{error} <Link href={errorLink}>More info.</Link></Alert> : null}
           <Form onSubmit={this.handleSubmit}>
-            <Form.Label>Plugin (<code>.zip</code> file)</Form.Label>
+            <Form.Label>插件 (<code>.zip</code> 文件)</Form.Label>
             <InputGroup className="mb-3">
               <Form.Control
                 type="file"
@@ -100,7 +100,7 @@ export default class Create extends Component {
                 onChange={this.handleStubChange}
               />
               <Form.Text className="text-muted">
-                Don&#39;t change this unless you know what you&#39;re doing.
+                不要更改此设置，除非您知道自己在做什么。
               </Form.Text>
             </Form.Group>
             <Button
@@ -111,11 +111,11 @@ export default class Create extends Component {
               {loading ? (
                 <>
                   <span className="spinner-border spinner-border-sm mr-1" />{' '}
-                  Converting
+                  转换中
                   <span className="dots" />
                 </>
               ) : (
-                'Create'
+                '创建'
               )}
             </Button>
           </Form>
