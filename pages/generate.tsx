@@ -89,7 +89,7 @@ class Main extends PluginBase{
       );
     } catch {
       this.setState({
-        error: 'An error occurred while generating your plugin.',
+        error: '生成插件时发生错误。',
         errorLink: '/support#generate-error'
       });
     } finally {
@@ -103,24 +103,24 @@ class Main extends PluginBase{
     return (
       <>
         <Head>
-          <meta name="description" content="Generate a skeleton plugin" />
+          <meta name="description" content="生成框架插件" />
         </Head>
         <Layout title="Generate plugin" showNav={true}>
-          {error ? <Alert variant="danger">{error} <Link href={errorLink!}>More info.</Link></Alert> : null}
+          {error ? <Alert variant="danger">{error} <Link href={errorLink!}>更多信息</Link></Alert> : null}
           <Form onSubmit={this.handleSubmit}>
             <Form.Group className="mb-3">
-              <Form.Label>Plugin name</Form.Label>
+              <Form.Label>插件名</Form.Label>
               <Form.Control
                 type="text"
                 onChange={this.handleNameChange}
                 isInvalid={nameError}
               />
               <Form.Control.Feedback type="invalid">
-                Only letters, numbers, underscores and dashes are allowed.
+                只允许使用字母、数字、下划线和破折号。
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Plugin API version</Form.Label>
+              <Form.Label>插件API版本</Form.Label>
               <Form.Control
                 type="text"
                 onChange={this.handleAPIChange}
@@ -134,11 +134,11 @@ class Main extends PluginBase{
               {loading ? (
                 <>
                   <span className="spinner-border spinner-border-sm mr-1" />{' '}
-                  Generating
+                  生成中
                   <span className="dots" />
                 </>
               ) : (
-                'Generate'
+                '生成'
               )}
             </Button>
           </Form>
