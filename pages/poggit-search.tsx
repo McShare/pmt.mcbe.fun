@@ -37,9 +37,9 @@ export default class PoggitSearch extends Component {
     return (
       <>
         <Head>
-          <meta name="description" content="Search Poggit for plugins" />
+          <meta name="description" content="在 Poggit 中搜索插件" />
         </Head>
-        <Layout title="Poggit Search" showNav={true}>
+        <Layout title="Poggit 搜索" showNav={true}>
           <InstantSearch searchClient={searchClient} indexName="plugins">
             <Configure hitsPerPage={5} />
             <CustomSearchBox />
@@ -69,7 +69,7 @@ const CustomSearchBox = ({ ...props }) => {
       <Form.Control
         type="search"
         className="mb-3"
-        placeholder="Search for plugins on Poggit"
+        placeholder="在 Poggit 中搜索插件"
         onChange={(event) => setSearchTerm(event.currentTarget.value)}
       />
     </Form>
@@ -98,8 +98,8 @@ function Hit({ hit }) {
 // @ts-ignore
 function NoResultsBoundary({ children, fallback }) {
   const { results } = useInstantSearch();
-  // The `__isArtificial` flag makes sure not to display the No Results message
-  // when no hits have been returned yet.
+  // `__isArtificial` 标志确保不显示“无结果”消息
+  // 当还没有返回任何点击时。
   if (!results.__isArtificial && results.nbHits === 0) {
     return (
       <>
