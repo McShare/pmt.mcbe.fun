@@ -7,33 +7,27 @@ export default class Support extends Component {
   render = () => (
     <>
       <Head>
-        <meta name="description" content="Get support with PocketMine Tools" />
+        <meta name="description" content="获得 PocketMine 工具的支持" />
       </Head>
       <Layout title="Support" showNav={true}>
-        <h1>Support</h1>
+        <h1>帮助</h1>
         <h2>FAQ</h2>
         <Accordion className="mb-3">
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Why won&apos;t my plugin work after using X?</Accordion.Header>
+            <Accordion.Header>为什么我的插件在使用 X 后无法工作？</Accordion.Header>
             <Accordion.Body>
-              <strong>Make <code>.phar</code></strong>
+              <strong>创建 <code>.phar</code></strong>
               <br />
-              Before uploading your <code>.zip</code> file, make sure the plugin&apos;s contents are in the root
-              directory or a directory with the same name as the <code>.zip</code> file.
+              在上传 <code>.zip</code> 文件之前，请确保插件的内容位于根目录或与 <code>.zip</code> 文件同名的目录中。
               <FileStructTable exTitles={false} />
-              <strong>Extract <code>.phar</code></strong><br />
-              Before moving your converted <code>.zip</code> file to the <code>plugins/</code> directory, make sure to
-              unzip it.
+              <strong>解压 <code>.phar</code></strong><br />
+              在将转换后的 <code>.zip</code> 文件移至 <code>plugins/</code> 目录之前，记得解压。
               <br />
-              <strong>API Injector</strong><br />
-              In previous versions of PocketMine Tools (v2 and below), API Injector would modify your plugin&apos;s code
-              to make it compatible with newer API versions.
-              As of v3, PocketMine Tools only bumps the API version in <code>plugin.yml</code>. This means you must
-              handle API changes by hand.
+              <strong>API 注入器</strong><br />
+              在以前版本的 PocketMine Tools（v2 及更低版本）中，API 注入器会修改您的插件的代码以使其与较新的 API 版本兼容。从 v3 开始，PocketMine Tools 仅更改 <code>plugin.yml</code> 中的 API 版本。这意味着您必须手动进行 API 适配。
               <br />
-              <strong>Decode <code>.pmf</code></strong><br />
-              Decode <code>.pmf</code> only decodes your <code>.pmf</code> plugin. It does not do anything behind the
-              scenes to make your plugin compatible with newer PocketMine-MP versions.
+              <strong>解码 <code>.pmf</code></strong><br />
+              解码 <code>.pmf</code> 仅解码您的 <code>.pmf</code> 插件。 它不会在后台进行任何更改来使您的插件与较新的 PocketMine-MP 版本兼容。
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
