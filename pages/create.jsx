@@ -79,10 +79,10 @@ export default class Create extends Component {
     return (
       <>
         <Head>
-          <meta name="description" content="Convert .zip to .phar" />
+          <meta name="description" content="将 .zip 转换为 .phar" />
         </Head>
-        <Layout title="Create .phar" showNav={true}>
-          {error ? <Alert variant="danger">{error} <Link href={errorLink}>More info.</Link></Alert> : null}
+        <Layout title="创建 .phar" showNav={true}>
+          {error ? <Alert variant="danger">{error} <Link href={errorLink}>更多信息</Link></Alert> : null}
           <Form onSubmit={this.handleSubmit}>
             <Form.Label>插件 (<code>.zip</code> 文件)</Form.Label>
             <InputGroup className="mb-3">
