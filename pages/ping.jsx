@@ -72,18 +72,18 @@ export default class CrashdumpParser extends Component {
     return (
       <>
         <Head>
-          <meta name="description" content="Ping Minecraft servers" />
+          <meta name="description" content="Ping Minecraft 服务器" />
         </Head>
-        <Layout title="Ping server" showNav={true}>
-          {pingError ? <Alert variant="danger">{pingError} <Link href={pingErrorLink}>More info.</Link></Alert> : null}
+        <Layout title="Ping 服务器" showNav={true}>
+          {pingError ? <Alert variant="danger">{pingError} <Link href={pingErrorLink}>更多信息</Link></Alert> : null}
           <Form onSubmit={this.handleSubmit}>
             <Row className="mb-3 align-items-center mt">
               <Col xs="auto">
-                <Form.Label>Host</Form.Label>
+                <Form.Label>主机</Form.Label>
                 <Form.Control type="text" placeholder="play.lbsg.net" onChange={this.handleHostChange} />
               </Col>
               <Col xs="auto">
-                <Form.Label className="mt-3 mt-md-0">Port</Form.Label>
+                <Form.Label className="mt-3 mt-md-0">端口</Form.Label>
                 <Form.Control type="number" placeholder="19132" onChange={this.handlePortChange} />
               </Col>
             </Row>
@@ -109,19 +109,18 @@ export default class CrashdumpParser extends Component {
               <tbody>
               <tr>
                 <td>MOTD</td>
-                <td>{data.name} <a href={`/motd-generator/?motd=${data.name}`} target="_blank">Open in MOTD
-                  Generator</a></td>
+                <td>{data.name} <a href={`/motd-generator/?motd=${data.name}`} target="_blank">在MOTD生成器中打开</a></td>
               </tr>
               <tr>
-                <td>MCPE Version</td>
+                <td>MCPE 版本</td>
                 <td>v{data.mcpeVersion}</td>
               </tr>
               <tr>
-                <td>Current players</td>
+                <td>当前玩家</td>
                 <td>{data.currentPlayers}</td>
               </tr>
               <tr>
-                <td>Max players</td>
+                <td>玩家上限</td>
                 <td>{data.maxPlayers}</td>
               </tr>
               </tbody>
